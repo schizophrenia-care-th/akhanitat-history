@@ -206,9 +206,20 @@
   </div>
 </div>
 
-<!-- Container โหลดเกม 8-Bit Mini RPG -->
+<!-- Container โหลดเกม 8-Bit Mini RPG (มีปุ่มย้อนกลับ) -->
 <div id="rpg-container" style="display: none; position: fixed; inset: 0; z-index: 9998; background: #000;">
-  <iframe src="2310-Mini-Rpg.html" style="width: 100%; height: 100%; border: none;"></iframe>
+  
+  <!-- แถบเมนูด้านบนสำหรับย้อนกลับ -->
+  <div style="position: absolute; top: 10px; left: 10px; z-index: 10000; display: flex; gap: 10px;">
+    <button onclick="backToModeSelect()" style="background: rgba(43, 34, 22, 0.9); color: #f3e5ab; border: 1px solid #8c6d23; padding: 6px 14px; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: bold; font-family: 'Sarabun', sans-serif;">
+      ↩️ เปลี่ยนโหมดเกม
+    </button>
+    <a href="index.html" style="background: rgba(178, 34, 34, 0.9); color: #ffffff; border: 1px solid #8c6d23; padding: 6px 14px; border-radius: 4px; text-decoration: none; font-size: 13px; font-weight: bold; font-family: 'Sarabun', sans-serif;">
+      🏠 กลับหน้าหลัก
+    </a>
+  </div>
+
+  <iframe id="rpg-iframe" src="2310-Mini-Rpg.html" style="width: 100%; height: 100%; border: none;"></iframe>
 </div>
 
 <script>
@@ -217,6 +228,16 @@
     if (mode === 'rpg') {
       document.getElementById('rpg-container').style.display = 'block';
     }
+  }
+
+  function backToModeSelect() {
+    // ซ่อนตัวเกม 8-Bit และรีโหลด iframe เพื่อรีเซ็ตเกม
+    document.getElementById('rpg-container').style.display = 'none';
+    const iframe = document.getElementById('rpg-iframe');
+    iframe.src = iframe.src; 
+    
+    // แสดงหน้าเลือกโหมดกลับมา
+    document.getElementById('mode-select-screen').style.display = 'flex';
   }
 </script>
 <!-- ================= จบส่วนเลือกโหมด ================= -->
