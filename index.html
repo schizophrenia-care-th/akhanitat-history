@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จิตวิญญาณแห่งอัคนิทัต - มรดกเกียรติยศแห่งบรรพชน</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Sarabun:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Prompt:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0907;
+            --bg-card: rgba(22, 18, 14, 0.85);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa7c11;
+            --red-crimson: #800000;
+            --red-glow: #b22222;
+            --text-light: #e8e3d5;
+            --text-muted: #b8af9d;
+            --border-gold: #8c6d23;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(128, 0, 0, 0.25), transparent 70%),
+                radial-gradient(circle at 50% 80%, rgba(170, 124, 17, 0.15), transparent 70%);
+            background-attachment: fixed;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .thai-traditional {
+            font-family: 'Charm', cursive;
+            color: var(--gold-primary);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Header / Hero Section */
+        header {
+            position: relative;
+            padding: 100px 20px 80px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(10,9,7,0.9) 0%, rgba(20,15,10,0.95) 100%),
+                        url('https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=1920') center/cover;
+            border-bottom: 3px solid var(--border-gold);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
+            pointer-events: none;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .emblem-title {
+            font-size: 3.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #fff3a1 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: var(--gold-light);
+            font-weight: 300;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+            color: var(--gold-primary);
+        }
+
+        .ornament::before, .ornament::after {
+            content: '';
+            height: 2px;
+            width: 100px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Card Section */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 15px rgba(140, 109, 35, 0.15);
+            backdrop-filter: blur(5px);
+            position: relative;
+        }
+
+        .card::before {
+            content: '❖';
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            color: var(--gold-dark);
+            font-size: 1.2rem;
+        }
+
+        .card-title {
+            font-size: 2.3rem;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Highlight Section: Phraya Akkhiphinat */
+        .hero-ancestor {
+            border: 2px solid var(--gold-primary);
+            background: linear-gradient(135deg, rgba(30, 15, 10, 0.95) 0%, rgba(15, 10, 5, 0.95) 100%);
+            box-shadow: 0 0 30px rgba(178, 34, 34, 0.3), inset 0 0 20px rgba(212, 175, 55, 0.2);
+        }
+
+        .hero-ancestor .card-title {
+            color: var(--gold-light);
+            font-size: 2.6rem;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .badge-royal {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--red-crimson), var(--red-glow));
+            color: #fff;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: 1px solid var(--gold-primary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-number {
+            background: linear-gradient(45deg, var(--gold-dark), var(--gold-primary));
+            color: #000;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+        }
+
+        /* Ancestor Grid */
+        .ancestor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .ancestor-item {
+            background: rgba(10, 8, 6, 0.7);
+            border: 1px solid rgba(140, 109, 35, 0.4);
+            border-left: 4px solid var(--gold-primary);
+            padding: 25px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .ancestor-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .ancestor-name {
+            font-size: 1.6rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+        }
+
+        .ancestor-era {
+            font-size: 0.9rem;
+            color: var(--gold-dark);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        /* Family Branch Highlight */
+        .family-branch {
+            background: rgba(20, 15, 12, 0.9);
+            border: 1px dashed var(--gold-primary);
+            padding: 25px;
+            border-radius: 6px;
+            margin-top: 25px;
+        }
+
+        .wife-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .wife-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .wife-list li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+        }
+
+        /* YouTube Responsive Container */
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border: 2px solid var(--border-gold);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+            margin-top: 20px;
+            background-color: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            text-align: center;
+            font-style: italic;
+            padding: 30px;
+            border-top: 1px solid var(--border-gold);
+            border-bottom: 1px solid var(--border-gold);
+            margin: 40px 0;
+            background: rgba(128, 0, 0, 0.1);
+        }
+
+        .quote-text {
+            font-size: 1.4rem;
+            font-family: 'Charm', cursive;
+            color: var(--gold-light);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 2px solid var(--border-gold);
+            background: #050403;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .emblem-title { font-size: 2.6rem; }
+            .card { padding: 25px; }
+            .hero-ancestor .card-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Banner -->
+    <header>
+        <div class="header-content">
+            <div class="badge-royal">มรดกเกียรติยศแห่งแผ่นดิน</div>
+            <h1 class="emblem-title">ตระกูล อัคนิทัต</h1>
+            <p class="subtitle">สายเลือดแห่งคุณธรรม ความกล้าหาญ และจิตวิญญาณรักชาติ</p>
+            <div class="ornament">✤ ✦ ✤</div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- 102 Royal Surnames Honor -->
+        <section class="card">
+            <h2 class="card-title">
+                <span>๑๐๒ นามสกุลพระราชทานแรก</span>
+            </h2>
+            <p>
+                ในรัชสมัยพระบาทสมเด็จพระมงกุฎเกล้าเจ้าอยู่หัว (รัชกาลที่ ๖) ทรงพระกรุณาโปรดเกล้าฯ ให้ตราพระราชบัญญัติขนานนามสกุลขึ้นเมื่อวันที่ <strong>๒๒ มีนาคม พ.ศ. ๒๔๕๕ (๒๔๕๖)</strong> โดยทรงพระราชทานนามสกุลชุดแรกจำนวน ๑๐๒ นามสกุล แก่ผู้ใกล้ชิดสนิทสนมรับใช้ใกล้ชิดเบื้องพระยุคลบาท
+            </p>
+            <div style="margin-top: 20px; text-align: center;">
+                <span class="badge-number">ลำดับที่ ๖๓</span>
+                <h3 style="font-size: 2.2rem; color: var(--gold-light); margin: 10px 0;">"อัคนิทัต"</h3>
+                <p style="color: var(--text-muted);">
+                    ทรงพระราชทานแก่ <strong>นายร้อยโทสิน กรมมหาดเล็กรักษาพระองค์ในรัชกาลที่ ๕</strong> (ต่อมาได้รับพระราชทานบรรดาศักดิ์เป็น <em>พันเอก พระยาเทพสงคราม</em>) ผู้สืบสายเลือดตรงมาจาก <strong>พระยาอัคคีพินาศ (อ่ำ)</strong>
+                </p>
+            </div>
+        </section>
+
+        <!-- Highlight Hero: Phraya Akkhiphinat -->
+        <section class="card hero-ancestor">
+            <div style="text-align: center;">
+                <span class="badge-royal">ปฐมบรรพชนผู้จุดประกายสายตระกูล</span>
+            </div>
+            <h2 class="card-title">พระยาอัคคีพินาศ (อ่ำ)</h2>
+            <p style="text-align: center; color: var(--gold-light); font-size: 1.2rem; margin-bottom: 25px;">
+                วีรบุรุษจากภูเขาทอง สู่จุดเริ่มต้นแห่งสายตระกูล "อัคนิทัต"
+            </p>
+            <p>
+                ในหน้าประวัติศาสตร์อันยิ่งใหญ่ <strong>พระยาอัคคีพินาศ (อ่ำ)</strong> เดิมเป็นชายชาวบ้านจากภูเขาทอง จังหวัดพระนครศรีอยุธยา แหล่งประวัติศาสตร์สำคัญแห่งราชธานีเก่า หลังเหตุการณ์เสียกรุงครั้งที่สองในปี พ.ศ. ๒๓๑๐ ท่านได้รวบรวมหัวใจอันกล้าหาญ เข้าร่วมกับกองกำลังกู้ชาติของ <strong>สมเด็จพระเจ้าตากสินมหาราช</strong> ร่วมเดินทัพจากจันทบุรีเพื่อฟื้นฟูเอกราชของชาติไทย
+            </p>
+            <p style="margin-top: 15px;">
+                ด้วยความกล้าหาญ ซื่อสัตย์ และสติปัญญาในทางยุทธศาสตร์ ท่านได้รับความไว้วางใจให้เป็นกำลังสำคัญในการสถาปนาราชอาณาจักรกรุงธนบุรี ต่อมาในรัชสมัยพระบาทสมเด็จพระพุทธยอดฟ้าจุฬาโลกมหาราช (รัชกาลที่ ๑) แห่งกรุงรัตนโกสินทร์ ท่านได้รับพระราชทานบรรดาศักดิ์เป็น <strong>"พระยา" ตำแหน่งจางวางกองดับเพลิงในพระราชฐาน</strong> รับผิดชอบการป้องกันอัคคีภัยในเขตพระราชวัง สอดคล้องกับนาม <em>"อัคคีพินาศ"</em> อันหมายถึงผู้ปราบเพลิงภัย และเป็นรากฐานแห่งเกียรติยศของตระกูลอัคนิทัตสืบมา
+            </p>
+        </section>
+
+        <!-- Lineage / Historical Generations -->
+        <section class="card">
+            <h2 class="card-title">สายเลือดแห่งเกียรติยศ: บรรพชนรุ่นต่อมา</h2>
+            <div class="ancestor-grid">
+                
+                <div class="ancestor-item">
+                    <h3 class="ancestor-name">พระยาปริยัติธรรมธาดา (อาบ)</h3>
+                    <div class="ancestor-era">รับราชการช่วงรัชกาลที่ ๒ – ๓</div>
+                    <p>รับราชการในกระทรวงวัง ยุคฟื้นฟูและวางรากฐานราชสำนัก มีบทบาทสำคัญในการจัดระเบียบงานภายในราชสำนัก และได้รับการยกย่องอย่างสูงในความเชี่ยวชาญด้านธรรมะและการปกครอง</p>
+                </div>
+
+                <div class="ancestor-item">
+                    <h3 class="ancestor-name">ขุนอุปราชสีหวิกรม (อ่วม)</h3>
+                    <div class="ancestor-era">รับราชการช่วงรัชกาลที่ ๔</div>
+                    <p>ดำรงตำแหน่งเจ้ากรม ได้รับพระราชทานชื่อกรมว่า “อุปราชสีหวิกรม” สะท้อนถึงความเกรงขามและความสามารถในการบริหารราชการแผ่นดินช่วงเปิดรับอารยธรรมตะวันตก</p>
+                </div>
+
+                <div class="ancestor-item">
+                    <h3 class="ancestor-name">พระพิพิธสุนทร (อินทร)</h3>
+                    <div class="ancestor-era">ข้าราชการการทูตและนักปกครอง</div>
+                    <p>เชี่ยวชาญภาษาอังกฤษและการทูต ดำรงตำแหน่งเลขานุการสถานทูตไทย ณ กรุงลอนดอน ประเทศอังกฤษ นานถึง ๘ ปี ก่อนกลับมารับตำแหน่งข้าหลวงปกครองหัวเมืองสำคัญ เช่น เชียงแตง และอุบลราชธานี</p>
+                </div>
+
+                <div class="ancestor-item">
+                    <h3 class="ancestor-name">พันเอก พระยาเทพสงคราม (สิน อัคนิทัต)</h3>
+                    <div class="ancestor-era">นายทหารชั้นผู้ใหญ่ยุคเปลี่ยนผ่านระบอบ</div>
+                    <p>บุตรของพระพิพิธสุนทร เป็นนายทหารชั้นผู้ใหญ่ที่มีบทบาทสำคัญในประวัติศาสตร์การเมืองไทยช่วงต้นระบอบประชาธิปไตย โดยเข้าร่วมกับ “กบฏบวรเดช” ในปี พ.ศ. ๒๔๗๖ การลุกฮือของกลุ่มข้าราชการและทหารที่ไม่เห็นด้วยกับคณะราษฎร และต้องการฟื้นฟูอำนาจของพระมหากษัตริย์ภายใต้ระบบสมบูรณาญาสิทธิราชย์ แม้การกบฏครั้งนั้นจะล้มเหลว แต่สะท้อนให้เห็นถึงความยึดมั่นในอุดมการณ์และจุดยืนทางการเมืองของท่าน</p>
+                </div>
+
+                <div class="ancestor-item">
+                    <h3 class="ancestor-name">หลวงพลหาญสงคราม (จิตร อัคนิทัต)</h3>
+                    <div class="ancestor-era">นายทหารยุคเปลี่ยนผ่านการปกครอง</div>
+                    <p>ข้าราชการทหารผู้มีบทบาทสำคัญในการรับใช้ชาติบ้านเมือง ในยุคสมัยที่ประเทศไทยเผชิญการเปลี่ยนผ่านทางการเมืองและการทหาร</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Main Focus: Colonel Phraya Thepsongkhram & Family Branch -->
+        <section class="card">
+            <h2 class="card-title">พันเอก พระยาเทพสงคราม (สิน อัคนิทัต)</h2>
+            <p>
+                บุตรของพระพิพิธสุนทร (อินทร) ท่านเป็นนายทหารชั้นผู้ใหญ่ที่มีบทบาทสำคัญยิ่งในประวัติศาสตร์การเมืองไทย ยึดมั่นในอุดมการณ์และความจงรักภักดีอย่างสืบเนื่อง
+            </p>
+            
+            <div class="family-branch">
+                <h3 style="color: var(--gold-light); font-size: 1.5rem; margin-bottom: 10px;">
+                    บันทึกประวัติศาสตร์สายสัมพันธ์ครอบครัว (ปู่ทวด)
+                </h3>
+                <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 15px;">
+                    ความทรงจำและบันทึกจากทายาทรุ่นหลังที่สืบทอดสายเลือดตรง:
+                </p>
+                <ul class="wife-list">
+                    <li>
+                        <strong>ภรรยาคนแรก:</strong> หม่อมหลวงดนตรี มนตรีกุล
+                    </li>
+                    <li>
+                        <strong>คุณย่า:</strong> นางแฉล้ม บุญทวี (สายตรงของผู้จัดทำ)
+                    </li>
+                    <li>
+                        <strong>ย่าญวน:</strong> ภรรยาอีกท่านหนึ่งของท่าน ซึ่งได้ร่วมเดินทางลี้ภัยทางการเมืองไปพำนัก ณ ประเทศเวียดนาม ในช่วงเหตุการณ์เปลี่ยนผ่านทางการเมือง (กบฏบวรเดช พ.ศ. ๒๔๗๖)
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Quote -->
+        <div class="quote-box">
+            <p class="quote-text">
+                "ตระกูลอัคนิทัต มิใช่เพียงแค่ชื่อสกุล แต่เป็นสัญลักษณ์ของความเสียสละ ความกล้าหาญ และการรับใช้แผ่นดินสืบไป"
+            </p>
+        </div>
+
+        <!-- Media / YouTube Section -->
+        <section class="card">
+            <h2 class="card-title">วีดิทัศน์ประวัติศาสตร์และเรื่องราว</h2>
+            <p style="margin-bottom: 15px;">
+                รับชมเรื่องราวและสารคดีประวัติศาสตร์ที่เกี่ยวข้องกับบรรพชนตระกูลอัคนิทัต:
+            </p>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube-nocookie.com/embed/CigKDOWFEPc" title="สารคดีประวัติศาสตร์ตระกูลอัคนิทัต" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>อนุสรณ์แห่งเกียรติยศ ตระกูล "อัคนิทัต"</p>
+        <p style="margin-top: 5px; font-size: 0.8rem; color: #666;">เรียบเรียงและจัดทำขึ้นเพื่อเชิดชูเกียรติคุณบรรพชน</p>
+    </footer>
+
+</body>
+</html>
