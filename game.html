@@ -182,7 +182,44 @@
     </style>
 </head>
 <body>
+<!-- ================= ส่วนเลือกโหมดเกม ================= -->
+<div id="mode-select-screen" style="position: fixed; inset: 0; background-color: #1a0f07; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; font-family: 'Sarabun', sans-serif;">
+  <div style="max-width: 600px; border: 2px solid #8c6d23; background: rgba(22, 18, 14, 0.95); padding: 30px 20px; border-radius: 8px; box-shadow: 0 0 25px rgba(0,0,0,0.9);">
+    <h1 style="color: #f3e5ab; font-family: 'Charm', cursive; font-size: 28px; margin-top: 0; text-shadow: 0 0 10px #b22222;">⚔️ เลือกโหมดการเล่นมรดกกู้ชาติ</h1>
+    <p style="color: #e8e3d5; font-size: 15px; margin-bottom: 25px;">สัมผัสเรื่องราวปฐมบรรพชน 'อ่ำ' ในรูปแบบที่คุณสนใจ</p>
+    
+    <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+      <!-- โหมดที่ 1 -->
+      <div onclick="selectGameMode('story')" style="border: 1px solid #8c6d23; background: #22120e; padding: 20px; width: 220px; border-radius: 6px; cursor: pointer; transition: 0.2s;" onmouseover="this.style.borderColor='#f3e5ab'" onmouseout="this.style.borderColor='#8c6d23'">
+        <h3 style="color: #d4af37; margin: 0 0 10px 0;">📜 โหมดเนื้อเรื่อง</h3>
+        <p style="color: #c0c0c0; font-size: 13px; margin: 0 0 15px 0; line-height: 1.4;">เน้นอ่าน ดื่มด่ำบรรยากาศ และเลือกเส้นทางประวัติศาสตร์ (Interactive Fiction)</p>
+        <button style="background: #8c6d23; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">เข้าเล่นโหมดนี้</button>
+      </div>
 
+      <!-- โหมดที่ 2 -->
+      <div onclick="selectGameMode('rpg')" style="border: 1px solid #8c6d23; background: #22120e; padding: 20px; width: 220px; border-radius: 6px; cursor: pointer; transition: 0.2s;" onmouseover="this.style.borderColor='#f3e5ab'" onmouseout="this.style.borderColor='#8c6d23'">
+        <h3 style="color: #d4af37; margin: 0 0 10px 0;">🕹️ โหมด 8-Bit RPG</h3>
+        <p style="color: #c0c0c0; font-size: 13px; margin: 0 0 15px 0; line-height: 1.4;">เน้นความสนุก บังคับตัวละครเดินหลบทหารพม่าและดับไฟ (Mini RPG)</p>
+        <button style="background: #b22222; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer; font-weight: bold;">เข้าเล่นโหมดนี้</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Container โหลดเกม 8-Bit Mini RPG -->
+<div id="rpg-container" style="display: none; position: fixed; inset: 0; z-index: 9998; background: #000;">
+  <iframe src="2310-Mini-Rpg.html" style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+
+<script>
+  function selectGameMode(mode) {
+    document.getElementById('mode-select-screen').style.display = 'none';
+    if (mode === 'rpg') {
+      document.getElementById('rpg-container').style.display = 'block';
+    }
+  }
+</script>
+<!-- ================= จบส่วนเลือกโหมด ================= -->
     <div class="game-container">
         <h1 class="game-title">วีรบุรุษอัคนิทัต</h1>
         <p class="game-subtitle">ยุทธการกู้ชาติสมเด็จพระเจ้าตากสินมหาราช</p>
