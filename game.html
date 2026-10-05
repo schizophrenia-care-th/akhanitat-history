@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>วีรบุรุษอัคนิทัต: ยุทธการกู้ชาติสมเด็จพระเจ้าตากสิน</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0907;
+            --bg-card: rgba(22, 18, 14, 0.92);
+            --gold-primary: #d4af37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa7c11;
+            --red-crimson: #800000;
+            --red-glow: #b22222;
+            --text-light: #e8e3d5;
+            --border-gold: #8c6d23;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Sarabun', sans-serif;
+            line-height: 1.8;
+            background-image: 
+                radial-gradient(circle at 50% 20%, rgba(128, 0, 0, 0.3), transparent 70%),
+                radial-gradient(circle at 50% 80%, rgba(170, 124, 17, 0.15), transparent 70%);
+            background-attachment: fixed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .game-container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--bg-card);
+            border: 2px solid var(--border-gold);
+            border-radius: 8px;
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.8), inset 0 0 20px rgba(140, 109, 35, 0.2);
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Charm', cursive;
+            color: var(--gold-primary);
+            text-align: center;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+
+        .game-title {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            background: linear-gradient(180deg, #fff3a1 0%, #d4af37 50%, #aa7c11 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .game-subtitle {
+            font-size: 1.1rem;
+            color: var(--gold-light);
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: 15px;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(10, 8, 6, 0.8);
+            border: 1px solid var(--border-gold);
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+        }
+
+        .stat-value {
+            color: var(--gold-light);
+        }
+
+        /* Story Box */
+        .story-box {
+            background: rgba(15, 12, 9, 0.85);
+            border-left: 4px solid var(--gold-primary);
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            min-height: 140px;
+            font-size: 1.05rem;
+        }
+
+        .chapter-badge {
+            display: inline-block;
+            background: var(--red-crimson);
+            color: #fff;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            border: 1px solid var(--gold-primary);
+        }
+
+        /* Options Grid */
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-option {
+            background: linear-gradient(180deg, rgba(30,22,15,0.9) 0%, rgba(15,10,5,0.9) 100%);
+            border: 1px solid var(--border-gold);
+            color: var(--text-light);
+            padding: 15px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: 'Sarabun', sans-serif;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .btn-option:hover {
+            background: linear-gradient(180deg, var(--red-crimson) 0%, #4a0000 100%);
+            border-color: var(--gold-primary);
+            color: #fff;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(178, 34, 34, 0.4);
+        }
+
+        .btn-restart {
+            background: linear-gradient(180deg, var(--gold-dark) 0%, var(--gold-primary) 100%);
+            color: #000;
+            font-weight: 700;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .btn-restart:hover {
+            background: #fff;
+            color: #000;
+            transform: none;
+        }
+
+        .nav-link {
+            display: block;
+            text-align: center;
+            margin-top: 25px;
+            color: var(--gold-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="game-container">
+        <h1 class="game-title">วีรบุรุษอัคนิทัต</h1>
+        <p class="game-subtitle">ยุทธการกู้ชาติสมเด็จพระเจ้าตากสินมหาราช</p>
+
+        <!-- Stats Bar -->
+        <div class="stats-bar" id="statsBar">
+            <div class="stat-item">⚔️ ไพร่พล: <span class="stat-value" id="statTroops">100</span></div>
+            <div class="stat-item">🌾 เสบียง: <span class="stat-value" id="statFood">100</span></div>
+            <div class="stat-item">🔥 ขวัญกำลังใจ: <span class="stat-value" id="statMorale">100</span></div>
+        </div>
+
+        <!-- Story Display -->
+        <div class="story-box">
+            <span class="chapter-badge" id="chapterBadge">บทที่ ๑</span>
+            <p id="storyText">กำลังโหลดเรื่องราว...</p>
+        </div>
+
+        <!-- Options Buttons -->
+        <div class="options-grid" id="optionsContainer">
+            <!-- Buttons dynamically generated by JS -->
+        </div>
+
+        <a href="index.html" class="nav-link">← กลับสู่หน้าหลักตระกูลอัคนิทัต</a>
+    </div>
+
+    <script>
+        // Game State
+        let gameState = {
+            troops: 100,
+            food: 80,
+            morale: 90,
+            currentChapter: 'start'
+        };
+
+        // Story Data
+        const storyData = {
+            start: {
+                chapter: "บทที่ ๑: วิกฤติแห่งอยุธยา (พ.ศ. ๒๓๑๐)",
+                text: "ท่านคือ 'อ่ำ' ชายชาวบ้านจากภูเขาทอง อยุธยา ราชธานีเก่ากำลังจะล่มสลายจากศึกสงคราม ผู้คนกระจัดกระจายระส่ำระสาย ในเวลานี้ท่านได้ข่าวว่า 'พระยาตาก' กำลังรวบรวมไพร่พลเพื่อเตรียมแผนการใหญ่ ท่านจะตัดสินใจอย่างไร?",
+                options: [
+                    {
+                        text: "รวบรวมชาวบ้านภูเขาทองที่มีจิตใจกล้าหาญ เดินทัพมุ่งลงใต้ไปสมทบกับพระยาตาก",
+                        next: "join_phraya_tak",
+                        effects: { troops: +20, morale: +10, food: -10 }
+                    },
+                    {
+                        text: "ซุ่มซ่อนกำลังในพื้นที่ภูเขาทองเพื่อคอยช่วยเหลือชาวบ้านที่พลัดถิ่น",
+                        next: "stay_ayutthaya",
+                        effects: { troops: -10, morale: -10, food: -20 }
+                    }
+                ]
+            },
+
+            join_phraya_tak: {
+                chapter: "บทที่ ๒: เดินทัพสู่จันทบุรี",
+                text: "ท่านนำพาชาวบ้านภูเขาทองเดินทางรอนแรมจนได้เข้าพบพระยาตาก ท่านได้รับความไว้วางใจให้ร่วมเดินทางฝ่าวงล้อมลงสู่จันทบุรี แต่เส้นทางยาวไกล เสบียงเริ่มขัดสน ไพร่พลเริ่มเหน็ดเหนื่อย ท่านจะแก้ปัญหาเสบียงอย่างไร?",
+                options: [
+                    {
+                        text: "จัดแบ่งกำลังออกล่าสัตว์และเจรจาขอยืมเสบียงจากหัวเมืองตามทางอย่างประนีประนอม",
+                        next: "chanthaburi_siege",
+                        effects: { food: +30, morale: +10 }
+                    },
+                    {
+                        text: "เร่งเร่งเดินทางให้เร็วที่สุดโดยไม่พัก เพื่อให้ถึงเมืองจันทบุรีโดยเร็ว",
+                        next: "chanthaburi_siege",
+                        effects: { food: -20, morale: -20 }
+                    }
+                ]
+            },
+
+            stay_ayutthaya: {
+                chapter: "บทที่ ๒: เผชิญศึกอยุธยา",
+                text: "การซุ่มซ่อนในอยุธยาทำได้ยากลำบาก เสบียงร่อยหรอและถูกกดดันจากข้าศึกตลอดเวลา ในที่สุดท่านตัดสินใจตีฝ่าวงล้อมนำชาวบ้านที่เหลือรอดเดินทางไปสมทบกับกองทัพพระยาตากที่จันทบุรีในภายหลัง",
+                options: [
+                    {
+                        text: "มุ่งหน้าสู่จันทบุรีอย่างระมัดระวังเพื่อเข้าร่วมกองทัพกู้ชาติ",
+                        next: "chanthaburi_siege",
+                        effects: { troops: -15, morale: +20, food: +10 }
+                    }
+                ]
+            },
+
+            chanthaburi_siege: {
+                chapter: "บทที่ ๓: ยุทธการทุบหม้อข้าวตีเมืองจันทบูร",
+                text: "กองทัพพระยาตากมาถึงเมืองจันทบุรี แต่เจ้าเมืองไม่ยอมสวามิภักดิ์ พระยาตากจึงสั่งการเด็ดขาด 'ให้ทุบหม้อข้าวหม้อแกงทิ้งเสียทั้งหมด หมายตีเมืองจันทบูรให้ได้ก่อนรุ่งแจ้ง!' ในฐานะแม่ทัพคนสำคัญ ท่านจะนำทัพชาวบ้านภูเขาทองเข้าสู้อย่างไร?",
+                options: [
+                    {
+                        text: "นำทัพบุกเข้าชนประตูเมืองด้วยความกล้าหาญ ปลุกขวัญไพร่พลด้วยจิตวิญญาณแห่งภูเขาทอง!",
+                        next: "victory_chanthaburi",
+                        effects: { troops: -10, morale: +30, food: +50 }
+                    },
+                    {
+                        text: "จัดกำลังเข้าโอบล้อมด้านข้างเพื่อตัดทางถอยของข้าศึก",
+                        next: "victory_chanthaburi",
+                        effects: { troops: -5, morale: +15, food: +40 }
+                    }
+                ]
+            },
+
+            victory_chanthaburi: {
+                chapter: "บทที่ ๔: ยุทธการค่ายโพธิ์สามต้น",
+                text: "ยุทธการตีเมืองจันทบูรสำเร็จลุล่วง! กองทัพได้รับการจัดตั้งสมบูรณ์ พระยาตากยกทัพเรือ ๑๐๐ ลำ บุกกลับขึ้นเหนือล่องตามแม่น้ำเจ้าพระยา เพื่อเข้าตี 'ค่ายโพธิ์สามต้น' ค่ายใหญ่ของข้าศึกที่อยุธยา ท่านได้รับมอบหมายให้ควบคุมการโจมตีทางบกและคอยระวังไฟ!",
+                options: [
+                    {
+                        text: "ใช้วิธีการวางเพลิงสุมค่ายข้าศึกอย่างมีระบบ พร้อมกุมสภาพการดับไฟไม่ให้ลามใส่ฝ่ายเรา",
+                        next: "ending_victory",
+                        effects: { troops: -10, morale: +25 }
+                    },
+                    {
+                        text: "สั่งการบุกตะลุมบอนเข้าค่ายตรงๆ ด้วยกำลังทั้งหมด",
+                        next: "ending_victory",
+                        effects: { troops: -30, morale: +10 }
+                    }
+                ]
+            },
+
+            ending_victory: {
+                chapter: "บทสรุป: ปฐมบรรพชนแห่งอัคนิทัต",
+                text: "ชัยชนะเป็นของฝ่ายเรา! เอกราชของชาติไทยถูกฟื้นฟูกลับคืนมา สมเด็จพระเจ้าตากสินมหาราชทรงสถาปนากรุงธนบุรีขึ้นเป็นราชธานีใหม่... ด้วยความกล้าหาญ ซื่อสัตย์ และความสามารถในการควบคุมยุทธศาสตร์และปราบเพลิงภัย 'อ่ำ' ชาวบ้านภูเขาทอง จึงได้รับความไว้วางใจ และต่อมาในยุครัตนโกสินทร์ ได้รับพระราชทานบรรดาศักดิ์เป็น 'พระยาอัคคีพินาศ' จางวางกองดับเพลิง ปฐมบรรพชนผู้จุดประกายสายตระกูล 'อัคนิทัต' อันทรงเกียรติสืบมา!",
+                options: [
+                    {
+                        text: "🔄 เล่นใหม่อีกครั้ง",
+                        next: "start",
+                        restart: true
+                    }
+                ]
+            },
+
+            ending_defeat: {
+                chapter: "บทสรุป: การกู้ชาติล้มเหลว",
+                text: "กำลังพลและขวัญกำลังใจของกองทัพหมดสิ้นลง ท่านไม่สามารถประคองกองกำลังไว้ได้ ทำให้การกู้ชาติไม่ประสบความสำเร็จ...",
+                options: [
+                    {
+                        text: "🔄 เริ่มต้นใหม่อีกครั้ง",
+                        next: "start",
+                        restart: true
+                    }
+                ]
+            }
+        };
+
+        // Update UI Function
+        function updateGame() {
+            const current = storyData[gameState.currentChapter];
+
+            // Check Defeat Condition
+            if ((gameState.troops <= 0 || gameState.morale <= 0) && gameState.currentChapter !== 'start' && !current.restart) {
+                gameState.currentChapter = 'ending_defeat';
+                return updateGame();
+            }
+
+            // Update Stats UI
+            document.getElementById('statTroops').innerText = Math.max(0, gameState.troops);
+            document.getElementById('statFood').innerText = Math.max(0, gameState.food);
+            document.getElementById('statMorale').innerText = Math.max(0, gameState.morale);
+
+            // Update Story UI
+            document.getElementById('chapterBadge').innerText = current.chapter;
+            document.getElementById('storyText').innerText = current.text;
+
+            // Render Options
+            const container = document.getElementById('optionsContainer');
+            container.innerHTML = '';
+
+            current.options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = opt.restart ? 'btn-option btn-restart' : 'btn-option';
+                btn.innerText = opt.text;
+                btn.onclick = () => selectOption(opt);
+                container.appendChild(btn);
+            });
+        }
+
+        // Option Selection Handler
+        function selectOption(option) {
+            if (option.restart) {
+                gameState = { troops: 100, food: 80, morale: 90, currentChapter: 'start' };
+            } else {
+                if (option.effects) {
+                    if (option.effects.troops) gameState.troops += option.effects.troops;
+                    if (option.effects.food) gameState.food += option.effects.food;
+                    if (option.effects.morale) gameState.morale += option.effects.morale;
+                }
+                gameState.currentChapter = option.next;
+            }
+            updateGame();
+        }
+
+        // Start Game On Load
+        updateGame();
+    </script>
+</body>
+</html>
